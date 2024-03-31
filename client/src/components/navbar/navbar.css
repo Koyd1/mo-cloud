@@ -1,0 +1,36 @@
+@charset "UTF-8";
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Центрирование элементов по вертикали */
+  height: 50px;
+  background-color: white;
+  width: 100%;
+}
+.navbar__header {
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.navbar__login {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.navbar__logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.container {
+  width: 1140px;
+  display: flex;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+}
+
+/*# sourceMappingURL=navbar.css.map */
