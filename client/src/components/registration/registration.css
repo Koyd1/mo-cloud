@@ -1,0 +1,35 @@
+.registration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  background-color: white;
+  margin-top: 100px;
+  width: 500px;
+  border-radius: 20px;
+  padding: 30px;
+}
+.registration__header {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.registration__button {
+  border: none;
+  color: white;
+  background-color: #385883;
+  font-weight: 700;
+  padding: 5px 10px;
+  align-self: flex-end;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.registration__button:hover {
+  background-color: #2C305D;
+}
+.registration input {
+  margin: 10px 20px;
+}
+
+/*# sourceMappingURL=registration.css.map */

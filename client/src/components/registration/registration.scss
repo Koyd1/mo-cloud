@@ -1,0 +1,40 @@
+@import "../../utils/colors";
+.registration{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  background-color: white;
+
+  margin-top:100px;
+  width: 500px;
+  border-radius: 20px;
+  padding: 30px;
+
+  &__header{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  &__button{
+    border: none;
+    color: white;
+    background-color: $font-color;
+    font-weight: 700;
+    padding: 5px 10px;
+    align-self: flex-end;
+    border-radius: 8px;
+    margin-top: 20px;
+    &:hover{
+      background-color: $logo-color;
+    }
+
+  }
+
+  input{
+  margin: 5px 20px;
+  }
+
+}
