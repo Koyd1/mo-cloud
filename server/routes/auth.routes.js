@@ -6,12 +6,14 @@ const {check, validationResult} = require("express-validator");
 const config = require("config");
 const router = new Router();
 const authMiddleware = require("../middleware/auth.middleware");
+const fileService = require('../service/fileService');
+const File = require('../models/File');
 
 
 router.post('/registration',
     [
         check('email', "Uncorrect email").isEmail(),
-        check('password', 'Password must be longer than 3 and shorter than 12').isLength({min:3, max:12})
+        check('password', 'Password must be longer than 3 and shorter than 12').isLength({min: 3, max: 12})
     ],
     async (req, res) => {
         try {
@@ -25,12 +27,13 @@ router.post('/registration',
 
             const candidate = await User.findOne({email})
 
-            if(candidate) {
+            if (candidate) {
                 return res.status(400).json({message: `User with email ${email} already exist`})
             }
             const hashPassword = await bcrypt.hash(password, 8)
             const user = new User({email, password: hashPassword, usedSpace: 0})
             await user.save()
+            await fileService.createDir(new File({user: user.id, name: ''}))
             return res.json({message: "User was created"})
 
         } catch (e) {
